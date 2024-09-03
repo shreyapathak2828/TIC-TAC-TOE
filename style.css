@@ -1,33 +1,35 @@
-body{
+body {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     width: 100%;
     height: 100%;
     overflow: hidden;
     margin: 0;
+    background-color: #f0f0f0;
 }
 
-.row{
+.row {
     display: flex;
 }
-.col{
+
+.col {
     height: 100px;
     width: 100px;
     border: 1px solid black;
-    display:flex;
+    display: flex;
     justify-content: center;
     align-items: center;
     font-size: 30px;
     cursor: pointer;
 }
 
-*{
-    margin:0;
-    padding:0;
-    background-color:  aliceblue;
+* {
+    margin: 0;
+    padding: 0;
+    background-color: aliceblue;
     text-align: center;
 }
 
- h1{
+h1 {
     color: aliceblue;
     background-color: #211d1d;
     height: 5rem;
@@ -35,10 +37,10 @@ body{
     font-size: 45px;
 }
 
-.container{
-    display:flex;
+.container {
+    display: flex;
     padding-top: 25px;
-    padding-left: 590px;
+    justify-content: center;
 }
 
 .score-board {
@@ -48,24 +50,62 @@ body{
     font-size: 2rem;
     margin-top: 3rem;
     gap: 5rem;
-  }
+}
 
-#you{
+#you {
     padding: 25px;
 }
 
-#computer{
+#computer {
     padding: 25px;
 }
 
-
-#msg{
+#msg {
     background-color: black;
-    color:aliceblue;
-    font-size:25px;
+    color: aliceblue;
+    font-size: 25px;
     font-family: Lato;
-    height:30px;
-    display:inline;
+    height: 30px;
+    display: inline;
     margin-top: 5rem;
     text-align: justify;
+}
+
+.popup {
+    display: none;
+    position: fixed;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    padding: 20px;
+    background-color: white;
+    border: 2px solid #333;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.3);
+    text-align: center;
+    z-index: 1000;
+    opacity: 0;
+    transition: opacity 0.3s ease, transform 0.3s ease;
+    border-radius: 10px;
+}
+
+.popup.active {
+    display: block;
+    opacity: 1;
+    transform: translate(-50%, -50%) scale(1.05);
+}
+
+.popup button {
+    margin-top: 10px;
+    padding: 10px 20px;
+    font-size: 1rem;
+    border: none;
+    border-radius: 5px;
+    background-color: #28a745;
+    color: white;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.popup button:hover {
+    background-color: #218838;
 }
